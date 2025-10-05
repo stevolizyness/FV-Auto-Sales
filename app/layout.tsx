@@ -5,8 +5,7 @@ import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { WhatsAppButton } from '@/components/ui/whatsapp-button'
 import { Analytics } from '@/components/analytics'
-import { Toaster } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastProvider } from '@/components/providers/toast-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -86,18 +85,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
-        <Toaster
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
+        <ToastProvider />
         <Analytics />
       </body>
     </html>
